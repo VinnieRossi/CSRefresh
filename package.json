@@ -1,0 +1,31 @@
+{
+  "name": "wikiknot",
+  "version": "1.0.0",
+  "description": "Wiki Exploration game",
+  "main": "server.js",
+  "engines": {
+    "node": ">=4.3.2"
+  },
+  "scripts": {
+    "deploy": "gcloud app deploy",
+    "start": "node app.js",
+    "lint": "samples lint",
+    "pretest": "npm run lint",
+    "system-test": "samples test app",
+    "test": "npm run system-test",
+    "e2e-test": "samples test deploy"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "firebase": "^4.2.0",
+    "mongojs": "^2.4.0"
+  },
+  "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "1.4.15"
+  }
+}
