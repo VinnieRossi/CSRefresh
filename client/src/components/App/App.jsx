@@ -15,6 +15,7 @@ class App extends Component {
           <div className="grid-12">
             <Switch>
               <Route path='/blogs/:title' component={Blog} />
+              
               <Route component={NotFound} />
             </Switch>
           </div>
@@ -23,6 +24,7 @@ class App extends Component {
     );
   }
 }
+//<Route path='/home' component={Home} />
 
 export default App;
 

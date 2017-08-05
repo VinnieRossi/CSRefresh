@@ -7,6 +7,7 @@ require('firebase/auth');
 require('firebase/database');
 
 const blogs = require('./routes/blogs');
+const index = require('./routes/index');
 
 // Firebase config
 const config = {
@@ -22,8 +23,13 @@ firebase.initializeApp(config);
 const app = express();
 const port = process.env.PORT || 8080;
 
-// Set static folder. This allows express to serve all static files 
+// Set static folder. This allows express to serve all static files
 app.use(express.static(path.join(__dirname, 'client/build')));
+
+app.use(express.static(path.join(__dirname, 'client/images')));
+
+// Let express render html files (404 page, etc.)
+app.engine('html', require('ejs').renderFile);
 
 // Body Parser middleware
 app.use(bodyParser.json());
@@ -31,7 +37,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // Routes
 app.use('/blogContents', blogs);
-app.use('/*', blogs);
+app.use('/*', index);
 
 // Start server
 app.listen(port, () => {
