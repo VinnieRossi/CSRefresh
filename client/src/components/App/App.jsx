@@ -1,40 +1,22 @@
 import React, { Component } from 'react';
 import './App.scss';
-//import * as firebase from 'firebase';
 import Blog from '../Blog/Blog.jsx';
+import NotFound from '../NotFound/NotFound.jsx';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
-
-  constructor() {
-    super();
-    this.state = {
-      header: "",
-      chapters: []
-    };
-  }
-  
-  componentDidMount() {
-    const blogTitle = 'Genesis';
-    // Fetch blog response from database
-    fetch(`/blogs/${blogTitle}`)
-      .then(res => res.json())
-      .then(response => {
-        this.setState({
-          header: response.header,
-          chapters: response.chapters
-        });
-      });
-  }
-  
   render() {
     return (
       <div className="App">
         <div className="header grid-12">
-          <h2>Lultima</h2>
+          <h2>Review Core CS Quickly</h2>
         </div>      
         <div className="content">
           <div className="grid-12">
-            <Blog header={this.state.header} chapters={this.state.chapters}/>
+            <Switch>
+              <Route path='/blogs/:title' component={Blog} />
+              <Route component={NotFound} />
+            </Switch>
           </div>
         </div>
       </div>

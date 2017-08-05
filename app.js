@@ -30,7 +30,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 // Routes
-app.use('/blogs', blogs);
+app.use('/blogContents', blogs);
+app.use('/*', blogs);
 
 // Start server
 app.listen(port, () => {
