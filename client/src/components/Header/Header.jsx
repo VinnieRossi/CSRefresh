@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Navbar from '../Navbar/Navbar.jsx';
 import { withRouter } from 'react-router-dom';
+import './Header.scss';
 
 class Header extends Component {
 
@@ -15,8 +16,8 @@ class Header extends Component {
 
     render() {
         return (
-        <header className="header grid-12">
-          <h2 onClick={this.takeMeHome}>Review Core CS Quickly</h2>
+        <header className="Header grid-12">
+          <h2 onClick={this.takeMeHome}>Where to go to review all core Computer Science concepts</h2>
           <Navbar></Navbar>
         </header>
         );
