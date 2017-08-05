@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  color: #333333;
+  color: #212121;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
 
 nav {
   text-align: center;
-  background-color: #5f5f5f;
+  background-color: #424242;
   padding: 10px;
   color: white;
 }
