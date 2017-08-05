@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import Navbar from '../Navbar/Navbar.jsx';
 import { withRouter } from 'react-router-dom';
+
 import './Header.scss';
+import Navbar from './Navbar/Navbar.jsx';
+
 
 class Header extends Component {
 

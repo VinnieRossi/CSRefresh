@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import './App.scss';
+import { Route, Switch } from 'react-router-dom';
+
 import Blog from '../Blog/Blog.jsx';
 import Home from '../Home/Home.jsx';
-import Header from '../Header/Header.jsx';
 import NotFound from '../NotFound/NotFound.jsx';
-import { Route, Switch } from 'react-router-dom';
+
+import './App.scss';
+import Header from './Header/Header.jsx';
+
 
 class App extends Component {
   render() {

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import Chapter from '../Chapter/Chapter.jsx';
+
 import './Blog.scss';
+import Chapter from './Chapter/Chapter.jsx';
+
 
 class Blog extends Component {
 
