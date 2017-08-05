@@ -10,6 +10,8 @@ class NotFound extends Component {
                 <p>Woops! Looks like the page you were trying to reach doesn't exist...yet! 
                 <br />
                 Try back in the future. Or never.</p>
+
+                <a href="/#">Take me home</a>
                 <img alt='Silly 404 description' src={img} />
             </section>
         </article>
