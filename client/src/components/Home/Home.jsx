@@ -11,7 +11,7 @@ class Home extends Component {
             </section>
         </article>
         );
-  }
+    }
 }
 
 export default Home;
