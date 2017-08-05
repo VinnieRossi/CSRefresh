@@ -6,7 +6,7 @@ import Chapter from './Chapter/Chapter.jsx';
 
 class Blog extends Component {
 
-    constructor() {
+  constructor() {
     super();
     this.state = {
       header: "",
@@ -15,7 +15,7 @@ class Blog extends Component {
   }
 
   componentDidMount() {
-    fetch(`/blogContents/${this.props.match.params.title}`)
+    fetch(`/blogs/${this.props.match.params.title}`)
       .then(res => res.json())
       .then(response => {
         this.setState({

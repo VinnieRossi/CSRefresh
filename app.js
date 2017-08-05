@@ -36,7 +36,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 // Routes
-app.use('/blogContents', blogs);
+app.use('/blogs', blogs);
 app.use('/*', index);
 
 // Start server

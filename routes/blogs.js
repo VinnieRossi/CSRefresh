@@ -13,4 +13,12 @@ router.get('/:title', (req, res, next) => {
     });
 });
 
+// Get all blogs
+router.get('/', (req, res, next) => {
+    return firebase.database().ref().once('value', snapshot => {
+      res.json(snapshot.val()).status(200);
+    });
+});
+
+
 module.exports = router;
