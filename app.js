@@ -7,6 +7,8 @@ require('firebase/auth');
 require('firebase/database');
 
 const blogs = require('./routes/blogs');
+const searches = require('./routes/searches');
+const sorts = require('./routes/searches');
 const index = require('./routes/index');
 
 // Firebase config
@@ -37,6 +39,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // Routes
 app.use('/blogs', blogs);
+app.use('/searches', searches);
+app.use('/sorts', sorts);
 app.use('/*', index);
 
 // Start server

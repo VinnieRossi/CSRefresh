@@ -6,9 +6,9 @@ class Navbar extends Component {
         return (
             <nav className="Nav">
                 <a href='#/' className="link">Home</a>
-                <a href='#/searches' className="link">Searches</a>
-                <a href='#/sorts' className="link">Sorts</a>
-                <a href='#/blogs' className="link">Blogs</a>
+                <a href='#/lists/searches' className="link">Searches</a>
+                <a href='#/lists/sorts' className="link">Sorts</a>
+                <a href='#/lists/blogs' className="link">Blogs</a>
             </nav>
         );
     }

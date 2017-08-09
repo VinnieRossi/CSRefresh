@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Blog from '../Blog/Blog.jsx';
-import BlogList from '../BlogList/BlogList.jsx'
+import BlogList from '../BlogList/BlogList.jsx';
+import SearchList from '../SearchList/SearchList.jsx';
+import SortList from '../SortList/SortList.jsx';
 import Home from '../Home/Home.jsx';
 import NotFound from '../NotFound/NotFound.jsx';
 
@@ -20,7 +22,9 @@ class App extends Component {
             {/* Main content routing */}
             <Switch>
               <Route exact path='/' component={Home} />
-              <Route exact path='/blogs/' component={BlogList} />
+              <Route exact path='/lists/blogs/' component={BlogList}/>
+              <Route exact path='/lists/searches/' component={SearchList}/>
+              <Route exact path='/lists/sorts/' component={SortList}/>
               <Route path='/blogs/:title' component={Blog} />
               <Route component={NotFound} />
             </Switch>

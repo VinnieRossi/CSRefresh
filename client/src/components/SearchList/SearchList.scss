@@ -1,0 +1,28 @@
+.SearchList {
+
+    section {
+        background-color: #E0E0E0;
+        padding: .5em;
+        margin: 1em;
+
+        div {
+            text-align: center;
+        }
+
+        a {
+            font-size: 1.5em;
+            color: #424242;
+            text-decoration: none;
+        }
+
+        h4 {
+            text-decoration: none;
+            color: #757575;
+            margin: 1em;
+        }
+    }
+
+    section:hover {
+        background-color: #BDBDBD;
+    }
+}
