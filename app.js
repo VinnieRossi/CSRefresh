@@ -7,17 +7,25 @@ require('firebase/auth');
 require('firebase/database');
 
 const blogs = require('./routes/blogs');
-const searches = require('./routes/searches');
-const sorts = require('./routes/searches');
+const algorithms = require('./routes/algorithms');
+const dataStructures = require('./routes/dataStructures');
 const index = require('./routes/index');
 
 // Firebase config
+// const config = {
+//   apiKey: process.env.API_KEY,
+//   authDomain: process.env.AUTH_DOMAIN,
+//   databaseURL: process.env.DATABASE_URL,
+//   storageBucket: process.env.STORAGE_BUCKET,
+//   messagingSenderId: process.env.MESSAGING_SENDER_ID
+// };
+// REMOVE BEFORE COMMIT
 const config = {
-  apiKey: process.env.API_KEY,
-  authDomain: process.env.AUTH_DOMAIN,
-  databaseURL: process.env.DATABASE_URL,
-  storageBucket: process.env.STORAGE_BUCKET,
-  messagingSenderId: process.env.MESSAGING_SENDER_ID
+  apiKey: "AIzaSyAcmIyiY9S-oENH4TK_d3lyInqXTYfZGro",
+  authDomain: "blog-5f6a9.firebaseapp.com",
+  databaseURL: "https://blog-5f6a9.firebaseio.com",
+  storageBucket: "blog-5f6a9.appspot.com",
+  messagingSenderId: "375466590313"
 };
 
 firebase.initializeApp(config);
@@ -39,8 +47,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // Routes
 app.use('/blogs', blogs);
-app.use('/searches', searches);
-app.use('/sorts', sorts);
+app.use('/algorithms', algorithms);
+app.use('/data-structures', dataStructures);
 app.use('/*', index);
 
 // Start server

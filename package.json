@@ -1,8 +1,8 @@
 {
-  "name": "wikiknot",
+  "name": "csrefresh",
   "version": "1.0.0",
-  "description": "Wiki Exploration game",
-  "main": "server.js",
+  "description": "Review for CS Concepts",
+  "main": "app.js",
   "engines": {
     "node": ">=4.3.2"
   },

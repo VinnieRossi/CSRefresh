@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 import './BlogList.scss';
 
@@ -14,36 +14,42 @@ class BlogList extends Component {
       super();
       this.state = {
         contentList: [],
-        contentType: "blogs",
+        contentType: "",
         titles: []
       };
-      this.navToContent = this.navToContent.bind(this);
+    }
+
+    retrieveContent(contentType) {
+      fetch(`/${contentType}/`)
+          .then(res => res.json())
+          .then(response => {
+            this.setState({
+              contentList: Object.values(response),
+              titles: Object.keys(response)
+            });
+          });
+      this.setState({contentType: contentType});
+    }
+
+    componentWillReceiveProps(nextProps) {
+      if (nextProps.match.params.contentType !== this.props.match.params.contentType) {
+        this.retrieveContent(nextProps.match.params.contentType);
+      }
     }
 
     componentDidMount() {
-      fetch(`/${this.state.contentType}/`)
-        .then(res => res.json())
-        .then(response => {
-          this.setState({
-            contentList: Object.values(response),
-            titles: Object.keys(response)
-          });
-        });
+      this.retrieveContent(this.props.match.params.contentType);
     }
-
-    navToContent = (index, event) => {
-        this.props.history.push(`${this.state.contentType}/${this.state.titles[index]}`);
-    };
 
     render() {
         return (
         <article className="BlogList">
             {this.state.contentList.map((content, index) =>
-            <section key={index} onClick={(event) => {this.navToContent(index, event)}}>
+            <section key={index}>
               <div>
-                <a href={`#/${this.state.contentType}/${this.state.titles[index]}`}>{content.header}</a>
+                <Link to={`/${this.state.contentType}/${this.state.titles[index]}`}>{content.header}</Link>
               </div>
-              
+
               {content.chapters.map((chapter, index) =>
                 <h4 key={index}>{chapter.components[0].props.title}</h4>
                 ,{/* Implement small summary of each chapter

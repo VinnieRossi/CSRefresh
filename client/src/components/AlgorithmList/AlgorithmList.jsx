@@ -1,23 +1,22 @@
 import React, {Component} from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
-import './SearchList.scss';
+import './AlgorithmList.scss';
 
 /*
   The titles are the actual database names for the blogs. This is different from the header, which can be more descriptive.
   As an example, if a blog is in a long-running series I could name it ALG_15. That doesn't describe anything about the blog
   This way I can be descriptive about the blog with the header but still have a short url
 */
-class SearchList extends Component {
+class AlgorithmList extends Component {
 
     constructor() {
       super();
       this.state = {
         contentList: [],
-        contentType: "searches",
+        contentType: "algorithms",
         titles: []
       };
-      this.navToContent = this.navToContent.bind(this);
     }
 
     componentDidMount() {
@@ -31,17 +30,13 @@ class SearchList extends Component {
         });
     }
 
-    navToContent = (index, event) => {
-        this.props.history.push(`${this.state.contentType}/${this.state.titles[index]}`);
-    };
-
     render() {
         return (
-        <article className="SearchList">
+        <article className="AlgorithmList">
             {this.state.contentList.map((content, index) =>
-            <section key={index} onClick={(event) => {this.navToContent(index, event)}}>
+            <section key={index}>
               <div>
-                <a href={`#/${this.state.contentType}/${this.state.titles[index]}`}>{content.header}</a>
+                <Link to={`/${this.state.contentType}/${this.state.titles[index]}`}>{content.header}</Link>
               </div>
               
               {content.chapters.map((chapter, index) =>
@@ -57,4 +52,4 @@ class SearchList extends Component {
     }
 }
 
-export default withRouter(SearchList);
+export default withRouter(AlgorithmList);
