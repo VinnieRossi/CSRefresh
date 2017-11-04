@@ -8,4 +8,10 @@ This is true, but about halfway through deciding to make my own blog I got annoy
 I am completely aware that this is a prime example of a page that should have very little javascript, but it was mostly for learning and experimenting with Firebase and React.
 
 # How to use 
-Make sure that you run `npm install` on both the client and server side to install the dependencies. It is also currently configured to use Firebase and deploy on the Google cloud.
+Make sure that you run `npm install` on both the client and server side to install the dependencies. Then you want to run `npm run start` at the client level in order to start the webpack dev server, so that we can have hot reloading.
+
+In order to test server stuff, you'll have to make sure that you run `npm run build` within the client project, which creates a minified and packaged build that the server serves. 
+
+Once you've done that, navigate to the server level of the project and run `npm run start`. This will serve that bundled js file, as well as the static assets within the build folder. You should now see the project and be able to test complete flows!
+
+Note: In order to see any changes on the client side at this point, you'll have to run another `npm run build` in order to rebuild the javascript/static files.
